@@ -36,5 +36,4 @@ Para tener organizados nuestros archivos, crearemos una carpeta ``interfaces`` e
 En la raíz de la carpeta clonada, tienen una carpeta ``resources`` (ahora bien escrita), la cual contiene un archivo con las películas de ejemplo para que puedan trabajar. El archivo debe ser importado al componente ``App.vue``, para este trabajo muevanla a ``src``.
 
 ``Appe.vue`` se va a encargar de renderizar la lista de películas en formato ``Cards``, para lo cual tendremos que usar la directiva correspondiente.
-
 > Como en el trabajo anterior, podremos **estilizar** nuestras ``Cards`` de forma personalizada. ¡Los invito a liberar su creatividad para crear diseños únicos! 🦾
