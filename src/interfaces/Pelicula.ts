@@ -6,4 +6,5 @@ export interface Pelicula {
   director: string;
   portada?: string;
   likes: number;
+  liked?:boolean;
 }

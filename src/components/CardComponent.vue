@@ -35,8 +35,19 @@ const enviarLikes = (id: number) => {
     </div>
     <div class="card__likes">
       <h3>Likes: {{ movie.likes }}</h3>
-      <button class="card__button--likes" @click="enviarLikes(movie.id)">
+      <button
+        v-if="!movie.liked"
+        class="card__button--likes"
+        @click="enviarLikes(movie.id)"
+      >
         💖Me gusta
+      </button>
+      <button
+        v-else
+        class="card__button--likes dis"
+        @click="enviarLikes(movie.id)"
+      >
+        💔No me gusta
       </button>
     </div>
   </div>
@@ -151,5 +162,11 @@ const enviarLikes = (id: number) => {
 
 .card__button--likes:active {
   transform: scale(0.9);
+}
+.dis {
+  background-color: #222021;
+}
+.dis:hover {
+  background-color: #5a595a;
 }
 </style>

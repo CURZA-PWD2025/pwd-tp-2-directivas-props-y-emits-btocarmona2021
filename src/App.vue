@@ -3,6 +3,7 @@ import mov from "./resource/movies";
 import CardComponent from "./components/CardComponent.vue";
 import { ref } from "vue";
 
+
 const movies = ref(mov.map((movie) => ({ ...movie, liked: false })));
 
 const update = (id: number) => {
@@ -21,7 +22,6 @@ const update = (id: number) => {
 
 <template>
   <div class="header">
-    <h1>Tus peliculas favoritas</h1>
   </div>
   <div v-for="movie in movies" :key="movie.id">
     <CardComponent :movie="movie" @updateLikes="update" />
@@ -31,12 +31,17 @@ const update = (id: number) => {
 <style scoped>
 .header {
   grid-column: span 3;
-  height: 100px;
+  height: 150px;
   font-size: 2em;
+  border-radius: 0 0 50% 20px;
   display: flex;
   color: rgb(201, 0, 201);
   justify-content: center;
   text-shadow: 0 0 2px whitesmoke;
   background-color: rgb(33, 20, 20);
+  background-image: url(../public/movie-trendy-banner-vector.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>
