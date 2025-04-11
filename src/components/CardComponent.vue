@@ -12,31 +12,31 @@ const enviarLikes = (id: number) => {
 <template>
   <div class="card">
     <div class="card__titulo">
-      <h2>{{ movie.titulo }}</h2>
-      <h3>{{ movie.anio }}</h3>
+      <h2>{{ props.movie.titulo }}</h2>
+      <h3>{{ props.movie.anio }}</h3>
     </div>
     <div class="card__portada">
       <img
         v-if="movie.portada"
         class="portada__imagen"
-        :src="movie.portada"
-        :alt="movie.titulo"
+        :src="props.movie.portada"
+        :alt="props.movie.titulo"
       />
       <img
         v-else
         class="portada__imagen"
         src="https://www.cucea.udg.mx/sites/default/files/styles/publicaciones/public/publicaciones/portadas/sin_portada_8.jpg?itok=yR2MLoZs"
-        :alt="movie.titulo"
+        :alt="props.movie.titulo"
       />
     </div>
     <div class="card__genero">
-      <h3>{{ movie.genero }}</h3>
-      <h3>{{ movie.director }}</h3>
+      <h3>{{ props.movie.genero }}</h3>
+      <h3>{{ props.movie.director }}</h3>
     </div>
     <div class="card__likes">
-      <h3>Likes: {{ movie.likes }}</h3>
+      <h3>Likes: {{ props.movie.likes }}</h3>
       <button
-        v-if="!movie.liked"
+        v-if="!props.movie.liked"
         class="card__button--likes"
         @click="enviarLikes(movie.id)"
       >
@@ -45,7 +45,7 @@ const enviarLikes = (id: number) => {
       <button
         v-else
         class="card__button--likes dis"
-        @click="enviarLikes(movie.id)"
+        @click="enviarLikes(props.movie.id)"
       >
         💔No me gusta
       </button>
